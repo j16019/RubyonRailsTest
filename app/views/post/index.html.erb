@@ -1,0 +1,85 @@
+<!--
+<form method="post">
+    <div class="form-group">
+        <label for="InputName">Name</label>
+        <input type="text" class="form-control" id="inputName" name="name">
+    </div>
+    <div class="form-group">
+        <label for="InputContent">Content</label>
+        <input type="text" class="form-control" id="inputContetnt" name="content">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+-->
+
+<br/>
+
+<div class="container">
+    <div class="row">
+        <% @posts.each do |post|%>
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                    <%=post.id.to_s+"."+post.name%>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p><%=post.content%></p>
+                            <footer class="blockquote-footer"><%=post.created_at%></footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <%= form_tag("/post/create", method: "post") do %>
+            <div class="form-group">
+            <%= label_tag(:q, "名前:") %>
+            <%= text_field_tag(:name,nil,class:"form-control") %>
+        </div>
+        <div class="form-group">
+            <%= label_tag(:q, "内容:") %>
+            <%= text_area_tag(:content,nil,class:"form-control") %>
+        </div>
+        <%= submit_tag("送信") %>
+      <% end %>
+    </div>
+    </div>
+</div>
+
+
+<!----------------------------------->
+
+<!--
+<h1>Post#index</h1>
+<p>Find me in app/views/post/index.html.erb</p>
+
+<% post1="Ramen" %>
+
+<%#
+%の後ろに#をつけると、<>の中身はコメントアウトになる
+posts=["ラーメン","カレー","マック"]
+%>
+
+<h1><%=post1 %></h1>
+
+<h2>
+<% @foods.each do|food| %>
+    <%=food %>
+    <br />
+<% end %>
+
+<% @posts.each do|post| %>
+    <%=post.name %>
+    <br />
+    <%=post.content %>
+    <br />
+<% end %>
+</h2>
+-->
+
