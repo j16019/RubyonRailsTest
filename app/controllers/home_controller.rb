@@ -19,7 +19,7 @@ class HomeController < ApplicationController
     # URIを解析し、hostやportをバラバラに取得できるようにする
     #uri = URI.parse("http://zipcloud.ibsnet.co.jp/api/search?#{params}")
 
-    uri = URI.parse("https://api.openweathermap.org/data/2.5/weather?lat=35&lon=13&appid=6d6cc69b9c9eb779ca25c4b18182b33a")
+    uri = URI.parse("https://api.openweathermap.org/data/2.5/weather?lat=35&lon=13&appid={APIkey}")
 
     @uriString = uri
     # リクエストパラメタを、インスタンス変数に格納
